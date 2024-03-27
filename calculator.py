@@ -33,8 +33,9 @@ v_total = ''
 ############################# Configuração da tela principal pelo
 # Main Window                 customtkinter  
 #############################
+theme = ''
 app = customtkinter.CTk()
-app.geometry("400x600")
+app.geometry("260x400")
 app.title("Calculadora")
 app.resizable(width=False, height=False)
 customtkinter.set_appearance_mode('light')
@@ -42,8 +43,10 @@ customtkinter.set_appearance_mode('light')
 ############################# Fundo da aplicação, há com toda certeza uma 
 # Background                  maneira simplificada de chegar ao mesmo resultado!
 ############################# Mas para minha leitura ficou mais objetivo dessa forma.
-bg = customtkinter.CTkLabel(app, text='', fg_color='#c9e2f9', width=1000, height=1000)
-bg.place(relx=0, rely=0)
+bg1 = customtkinter.CTkLabel(app, text='', fg_color=('#ffffff','#110f0f'), width=1000, height=1000)
+bg1.place(relx=0, rely=0)
+bg = customtkinter.CTkLabel(app, text='', fg_color=('#bcbcbc','#262c30'), width=1000, height=1000)
+bg.place(relx=0, rely=0.4)
 
 
 ############################# Definir todas as funções dos botões abaixo, li alguns
@@ -325,91 +328,108 @@ def total():                                # Uma menção especial a esta parte
     operation.clear()                       # Assumi que seria mais simples após o resultado ser exibido
     screen_main.clear()                     # que a calculadora fosse limpa para um input de novos calculos.
     screen_second.clear()
-    
+
+
+############################# Funções para alterar o tema.  
+# Theme Keys                 
+#############################
+def theme_mode():
+    if customtkinter.set_appearance_mode('light'):
+      customtkinter.set_appearance_mode('dark')
+      theme_button.configure(text='Light Mode')
+      
+    elif customtkinter.set_appearance_mode('dark'):
+        customtkinter.set_appearance_mode('light')
+        theme_button.configure(text='Dark Mode')       
+
 
 ############################# Todos os botões numéricos utilizados no projeto  
 # Button Keys                 
 ############################# 
-b0 = customtkinter.CTkButton(app, text="0", command=press_0, width=160, height=50, fg_color='#5baaf1',
-                             bg_color='#c9e2f9')
+b0 = customtkinter.CTkButton(app, text="0", command=press_0, width=106, height=40, fg_color=('#ffffff','#110d0d'),
+                             bg_color=('#bcbcbc','#262c30'),font=('Doradani Bold', 16), text_color=('#110d0d','#ffffff'))
 
-b0.place(relx=0.1, rely=0.9)
+b0.place(relx=0.05, rely=0.86)
 
-b1 = customtkinter.CTkButton(app, text="1", command=press_1, width=75, height=50, fg_color='#5baaf1',
-                             bg_color='#c9e2f9')
+b1 = customtkinter.CTkButton(app, text="1", command=press_1, width=50, height=40, fg_color=('#ffffff','#110d0d'),
+                             bg_color=('#bcbcbc','#262c30'),font=('Doradani Bold', 16), text_color=('#110d0d','#ffffff'))
 
-b1.place(relx=0.1, rely=0.8)
+b1.place(relx=0.05, rely=0.74)
 
-b2 = customtkinter.CTkButton(app, text="2", command=press_2, width=75, height=50, fg_color='#5baaf1',
-                             bg_color='#c9e2f9')
-b2.place(relx=0.31, rely=0.8)
+b2 = customtkinter.CTkButton(app, text="2", command=press_2, width=50, height=40, fg_color=('#ffffff','#110d0d'),
+                             bg_color=('#bcbcbc','#262c30'),font=('Doradani Bold', 16), text_color=('#110d0d','#ffffff'))
+b2.place(relx=0.29, rely=0.74)
 
-b3 = customtkinter.CTkButton(app, text="3", command=press_3, width=75, height=50, fg_color='#5baaf1',
-                             bg_color='#c9e2f9')
-b3.place(relx=0.52, rely=0.8)
+b3 = customtkinter.CTkButton(app, text="3", command=press_3, width=50, height=40, fg_color=('#ffffff','#110d0d'),
+                             bg_color=('#bcbcbc','#262c30'),font=('Doradani Bold', 16), text_color=('#110d0d','#ffffff'))
+b3.place(relx=0.52, rely=0.74)
 
-b4 = customtkinter.CTkButton(app, text="4", command=press_4, width=75, height=50, fg_color='#5baaf1',
-                             bg_color='#c9e2f9')
-b4.place(relx=0.1, rely=0.7)
+b4 = customtkinter.CTkButton(app, text="4", command=press_4, width=50, height=40, fg_color=('#ffffff','#110d0d'),
+                             bg_color=('#bcbcbc','#262c30'),font=('Doradani Bold', 16), text_color=('#110d0d','#ffffff'))
+b4.place(relx=0.05, rely=0.62)
 
-b5 = customtkinter.CTkButton(app, text="5", command=press_5, width=75, height=50, fg_color='#5baaf1',
-                             bg_color='#c9e2f9')
-b5.place(relx=0.31, rely=0.7)
+b5 = customtkinter.CTkButton(app, text="5", command=press_5, width=50, height=40, fg_color=('#ffffff','#110d0d'),
+                             bg_color=('#bcbcbc','#262c30'),font=('Doradani Bold', 16), text_color=('#110d0d','#ffffff'))
+b5.place(relx=0.29, rely=0.62)
 
-b6 = customtkinter.CTkButton(app, text="6", command=press_6, width=75, height=50, fg_color='#5baaf1',
-                             bg_color='#c9e2f9')
-b6.place(relx=0.52, rely=0.7)
+b6 = customtkinter.CTkButton(app, text="6", command=press_6, width=50, height=40, fg_color=('#ffffff','#110d0d'),
+                             bg_color=('#bcbcbc','#262c30'),font=('Doradani Bold', 16), text_color=('#110d0d','#ffffff'))
+b6.place(relx=0.52, rely=0.62)
 
-b7 = customtkinter.CTkButton(app, text="7", command=press_7, width=75, height=50, fg_color='#5baaf1',
-                             bg_color='#c9e2f9')
-b7.place(relx=0.1, rely=0.6)
+b7 = customtkinter.CTkButton(app, text="7", command=press_7, width=50, height=40, fg_color=('#ffffff','#110d0d'),
+                             bg_color=('#bcbcbc','#262c30'),font=('Doradani Bold', 16), text_color=('#110d0d','#ffffff'))
+b7.place(relx=0.05, rely=0.50)
 
-b8 = customtkinter.CTkButton(app, text="8", command=press_8, width=75, height=50, fg_color='#5baaf1',
-                             bg_color='#c9e2f9')
-b8.place(relx=0.31, rely=0.6)
+b8 = customtkinter.CTkButton(app, text="8", command=press_8, width=50, height=40, fg_color=('#ffffff','#110d0d'),
+                             bg_color=('#bcbcbc','#262c30'),font=('Doradani Bold', 16), text_color=('#110d0d','#ffffff'))
+b8.place(relx=0.29, rely=0.50)
 
-b9 = customtkinter.CTkButton(app, text="9", command=press_9, width=75, height=50, fg_color='#5baaf1',
-                             bg_color='#c9e2f9')
-b9.place(relx=0.52, rely=0.6)
+b9 = customtkinter.CTkButton(app, text="9", command=press_9, width=50, height=40, fg_color=('#ffffff','#110d0d'),
+                             bg_color=('#bcbcbc','#262c30'),font=('Doradani Bold', 16), text_color=('#110d0d','#ffffff'))
+b9.place(relx=0.52, rely=0.50)
 
 ############################# Estou estudando a implementação de novas operações
 # Operations Buttons          Ex: Números negativos, porcentagem, potência e afins...
 #############################
 
-sum_button = customtkinter.CTkButton(app, text="+", command=somar, width=75, height=40, fg_color='#DB821D',
-                                     bg_color='#c9e2f9')
-sum_button.place(relx=0.75, rely=0.6)
+sum_button = customtkinter.CTkButton(app, text="+", command=somar, width=50, height=35, fg_color=('#ffffff','#110d0d'),
+                                     bg_color=('#bcbcbc','#262c30'),font=('Doradani Bold', 20), text_color='#e65338')
+sum_button.place(relx=0.75, rely=0.42)
 
-sub_button = customtkinter.CTkButton(app, text="-", command=sub, width=75, height=40, fg_color='#DB821D',
-                                     bg_color='#c9e2f9')
-sub_button.place(relx=0.75, rely=0.675)
+sub_button = customtkinter.CTkButton(app, text="-", command=sub, width=50, height=35, fg_color=('#ffffff','#110d0d'),
+                                     bg_color=('#bcbcbc','#262c30'),font=('Doradani Bold', 20), text_color='#e65338')
+sub_button.place(relx=0.75, rely=0.52)
 
-mult_button = customtkinter.CTkButton(app, text="x", command=mult, width=75, height=40, bg_color='#c9e2f9',
-                                      fg_color='#DB821D')
-mult_button.place(relx=0.75, rely=0.75)
+mult_button = customtkinter.CTkButton(app, text="x", command=mult, width=50, height=35, fg_color=('#ffffff','#110d0d'),
+                                      bg_color=('#bcbcbc','#262c30'),font=('Doradani Bold', 20), text_color='#e65338')
+mult_button.place(relx=0.75, rely=0.62)
 
-div_button = customtkinter.CTkButton(app, text="÷", command=dividir, width=75, height=40, fg_color='#DB821D',
-                                     bg_color='#c9e2f9')
-div_button.place(relx=0.75, rely=0.825)
+div_button = customtkinter.CTkButton(app, text="÷", command=dividir, width=50, height=35, fg_color=('#ffffff','#110d0d'),
+                                     bg_color=('#bcbcbc','#262c30'),font=('Doradani Bold', 20), text_color='#e65338')
+div_button.place(relx=0.75, rely=0.72)
 
 
 #############################
 # System Buttons
 #############################
-clear_button = customtkinter.CTkButton(app, text="CLEAR", command=clear_all, width=75, height=50, fg_color='#93282A',
-                                       bg_color='#c9e2f9')
-clear_button.place(relx=0.75, rely=0.5)
+clear_button = customtkinter.CTkButton(app, text="C", command=clear_all, width=50, height=18, fg_color=('#ffffff','#110d0d'),
+                                       bg_color=('#bcbcbc','#262c30'),font=('Doradani Bold', 16), text_color='#28935C')
+clear_button.place(relx=0.05, rely=0.42)
 
-float_button = customtkinter.CTkButton(app, text=".", command=float_num,  width=75, height=50, fg_color='#5baaf1',
-                                       bg_color='#c9e2f9')
-float_button.place(relx=0.52, rely=0.9)
+theme_button = customtkinter.CTkButton(app, text="Light Mode", command=theme_mode, width=113, height=18, fg_color=('#110d0d','#ffffff'),
+                                       bg_color=('#bcbcbc','#262c30'),font=('Doradani Bold', 15), text_color=('#f1c232','#110d0d'))
+theme_button.place(relx=0.29, rely=0.42)
 
-total_button = customtkinter.CTkButton(app, text="=", command=total,  width=75, height=50, fg_color='#28935C',
-                                       bg_color='#c9e2f9')
-total_button.place(relx=0.75, rely=0.9)
+float_button = customtkinter.CTkButton(app, text=",", command=float_num, width=50, height=40, fg_color=('#ffffff','#110d0d'),
+                                       bg_color=('#bcbcbc','#262c30'),font=('Doradani Bold', 25), text_color='#f1c232')
+float_button.place(relx=0.52, rely=0.86)
 
-screen_label = customtkinter.CTkLabel(app, text='0', fg_color='#c9e2f9', width=300, height=100, anchor='center',
-                                      font=('Arial', 30), text_color='#285f93')
+total_button = customtkinter.CTkButton(app, text="=", command=total, width=50, height=55, fg_color=('#ffffff','#110d0d'),
+                                       bg_color=('#bcbcbc','#262c30'),font=('Doradani Bold', 20), text_color='#e65338')
+total_button.place(relx=0.75, rely=0.83)
+
+screen_label = customtkinter.CTkLabel(app, text='0', fg_color=('#ffffff','#110f0f'), width=300, height=100, anchor='center',
+                                      font=('Doradani Bold', 30), text_color=('#110f0f','#ffffff'))
 
 screen_label.place(relx=0.13, rely=0.1)
 app.mainloop()
