@@ -39,6 +39,8 @@ app.geometry("260x400")
 app.title("Calculadora")
 app.resizable(width=False, height=False)
 customtkinter.set_appearance_mode('light')
+darktheme = []
+theme = ''
 
 ############################# Fundo da aplicação, há com toda certeza uma 
 # Background                  maneira simplificada de chegar ao mesmo resultado!
@@ -334,14 +336,20 @@ def total():                                # Uma menção especial a esta parte
 # Theme Keys                 
 #############################
 def theme_mode():
-    if customtkinter.set_appearance_mode('light'):
-      customtkinter.set_appearance_mode('dark')
-      theme_button.configure(text='Light Mode')
-      
-    elif customtkinter.set_appearance_mode('dark'):
+    darktheme.append(1)
+    theme = str(darktheme)
+    theme = theme.strip('[]')
+    theme = theme.replace(',','')
+    theme = theme.replace(' ','')
+    theme = theme.replace("'",'')
+    theme = len(theme)
+    if theme % 2 == 0:
         customtkinter.set_appearance_mode('light')
-        theme_button.configure(text='Dark Mode')       
-
+        theme_button.configure(text='Dark Mode')
+    else:
+        customtkinter.set_appearance_mode('dark')
+        theme_button.configure(text='Light Mode')
+    print(theme)
 
 ############################# Todos os botões numéricos utilizados no projeto  
 # Button Keys                 
