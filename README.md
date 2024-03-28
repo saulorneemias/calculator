@@ -5,6 +5,7 @@
 INTERFACE
   1. Layout alterado;
   2. Agora é possível alterar o tema da calculadora entre modo escuro e modo claro;
+  3. Fonte alterada e inserida no projeto (É necessário ter instalada no sistema);
 
 
 # 1.0
