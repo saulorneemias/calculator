@@ -424,7 +424,7 @@ clear_button = customtkinter.CTkButton(app, text="C", command=clear_all, width=5
                                        bg_color=('#bcbcbc','#262c30'),font=('Doradani Bold', 16), text_color='#28935C')
 clear_button.place(relx=0.05, rely=0.42)
 
-theme_button = customtkinter.CTkButton(app, text="Light Mode", command=theme_mode, width=113, height=18, fg_color=('#110d0d','#ffffff'),
+theme_button = customtkinter.CTkButton(app, text="Dark Mode", command=theme_mode, width=113, height=18, fg_color=('#110d0d','#ffffff'),
                                        bg_color=('#bcbcbc','#262c30'),font=('Doradani Bold', 15), text_color=('#f1c232','#110d0d'))
 theme_button.place(relx=0.29, rely=0.42)
 
