@@ -51,7 +51,7 @@ bg = customtkinter.CTkLabel(app, text='', fg_color=('#bcbcbc','#262c30'), width=
 bg.place(relx=0, rely=0.4)
 
 
-############################# Definir todas as funções dos botões abaixo, li alguns
+############################# Defini todas as funções dos botões abaixo, li alguns
 # Buttons Functions           materiais que utilizaram lambda. Porém no momento
 ############################# ainda não possuo conhecimento para aplicar desta maneira
 def press_0():
