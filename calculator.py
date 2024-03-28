@@ -333,8 +333,8 @@ def total():                                # Uma menção especial a esta parte
 
 
 ############################# Funções para alterar o tema.  
-# Theme Keys                 
-#############################
+# Theme Keys                 A lógica funciona checkando se o número é impa ou par.
+############################# Caso "par" o tema é definido como claro e o contrário para escuro.
 def theme_mode():
     darktheme.append(1)
     theme = str(darktheme)
