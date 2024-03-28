@@ -245,7 +245,7 @@ def somar():
     operation.append('+')
     calc = '+'
     screen_label.configure(text=screen_second)
-    print(operation)
+
 
 
 def sub():
@@ -253,7 +253,7 @@ def sub():
     operation.append('-')
     calc = '-'
     screen_label.configure(text=screen_second)
-    print(operation)
+
 
 
 def mult():
@@ -261,7 +261,7 @@ def mult():
     operation.append('*')
     calc = '*'
     screen_label.configure(text=screen_second)
-    print(operation)
+
 
 
 def dividir():
@@ -269,7 +269,7 @@ def dividir():
     operation.append('/')
     calc = '/'
     screen_label.configure(text=screen_second)
-    print(operation)
+
 
         
 def float_num():
@@ -349,7 +349,7 @@ def theme_mode():
     else:
         customtkinter.set_appearance_mode('dark')
         theme_button.configure(text='Light Mode')
-    print(theme)
+
 
 ############################# Todos os botões numéricos utilizados no projeto  
 # Button Keys                 
